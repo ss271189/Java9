@@ -13,3 +13,11 @@ Demo project for Java9 features
     Note** Any resource which needs to be written within try with resource must implement AutoClosable interface.
             We can have only try with resource block . No catch or finally block mandatory.
     Benefit : Cleaner code with Java 1.9.
+
+3) Diamond Operator Enhancement
+
+     Diamond operator came as part of Java 1.7 
+     ArrayList<String> l=new ArrayList<>();   //<> is called as diamond operator
+     
+     Before Java 1.9, Diamond operator was not allowed with Anonymous class.
+   
