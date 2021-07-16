@@ -21,3 +21,11 @@ Demo project for Java9 features
      
      Before Java 1.9, Diamond operator was not allowed with Anonymous class.
    
+4) @SafeVarargs Enhancement as part of Java 1.9
+     
+	- Varargs came as part of Java 1.5 enhancement 
+	- Varargs with generic parameter gives Heap Pollution problem (Class Cast Exception)
+	- Complier gives warning to avoid Heap Pollution Problem
+	- To remove warning @SafeVarargs came as part of Java 1.7 enchancement but only for static and final instance methods.
+    - As part of Java 1.9 enchancement now @SafeVarargs can be annotated over private instance methods aswell.
+	
