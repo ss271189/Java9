@@ -3,7 +3,7 @@ Demo project for Java9 features
 
 1) Private methods in Interface
   
-   Use :- The main purpose of Private methods in interface is code reusability. Private methods can be static or 
+   Use :- The main purpose of Private methods in interface is code re-usability. Private methods can be static or 
    non-static. Private methods both static and non-static are not accessible to the implementation class.
    
 2) Try with Resource Enhancement
@@ -26,6 +26,7 @@ Demo project for Java9 features
 	- Varargs came as part of Java 1.5 enhancement 
 	- Varargs with generic parameter gives Heap Pollution problem (Class Cast Exception)
 	- Complier gives warning to avoid Heap Pollution Problem
-	- To remove warning @SafeVarargs came as part of Java 1.7 enchancement but only for static and final instance methods.
-    - As part of Java 1.9 enchancement now @SafeVarargs can be annotated over private instance methods aswell.
+	- To remove warning @SafeVarargs came as part of Java 1.7 enhancement but only for static and final instance methods.
+    - As part of Java 1.9 enhancement now @SafeVarargs can be annotated over private instance methods as-well.
+	- Non Final instance method can't be annotated with @SafeVarargs because they can be over ridden by child class and That override might not be safe.
 	
