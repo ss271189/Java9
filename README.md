@@ -29,4 +29,53 @@ Demo project for Java9 features
 	- To remove warning @SafeVarargs came as part of Java 1.7 enhancement but only for static and final instance methods.
     - As part of Java 1.9 enhancement now @SafeVarargs can be annotated over private instance methods as-well.
 	- Non Final instance method can't be annotated with @SafeVarargs because they can be over ridden by child class and That override might not be safe.
+
+5) Factory Methods to create Unmodifiable Collection Objects
+
+    - Method to create List
+	    a) List<String> list= List.of("A","B","C");
+		b) After creating list if we try to add or remove element it will give UnsupportedOperationException
+        c) Adding null element will result in NullPointerException.
+		d) Total 12 overloaded method for of().
+		e) It returns Object of ImmutableCollections$ListN. Static inner class of ImmutableCollections.	
+	
+    - Method to create Set
+     	a) Set<String> set= Set.of("A","B","C");
+		b) After creating Set if we try to add or remove element it will give UnsupportedOperationException.
+		c) Adding null element will result in NullPointerException.
+		d) Total 12 overloaded method.
+		e) Adding duplicate element to set will give IllegalArgumentException.
+		f) It returns Object of ImmutableCollections$SetN. Static inner class of ImmutableCollections;
+		
+	- Method to create Map
+        a) Map<String,String> mapNew= Map.of("A","Apple","B","Ball","C","Cat");	
+		b) After creating Map if we try to add or remove element it will give UnsupportedOperationException.
+		c) Adding NULL KEY or VALUE will result in NullPointerException.
+		d) Total 11 overloaded method. For more than 10 elements we should use Map.ofEntry() methods.
+		e) It returns Object of ImmutableCollections.MapN. Static Inner class of ImmutableCollections.
+		
+		
+		
+		
+			
+			
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	
 	
