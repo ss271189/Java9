@@ -55,7 +55,7 @@ Demo project for Java9 features
 		e) It returns Object of ImmutableCollections.MapN. Static Inner class of ImmutableCollections.
 		
 		
-		
+6) Stream API enchancement		
 		
 			
 			
