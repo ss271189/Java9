@@ -55,7 +55,13 @@ Demo project for Java9 features
 		e) It returns Object of ImmutableCollections.MapN. Static Inner class of ImmutableCollections.
 		
 		
-6) Stream API enchancement		
+6) Stream API enchancement	
+
+    - takeWhile() 
+        - default method added to Stream class.
+        - take parameter as Predicate 
+        - loops over the list and breaks where the conditions become false.
+        		
 		
 			
 			
