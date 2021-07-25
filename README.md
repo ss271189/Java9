@@ -33,34 +33,50 @@ Demo project for Java9 features
 5) Factory Methods to create Unmodifiable Collection Objects
 
     - Method to create List
-	    a) List<String> list= List.of("A","B","C");
-		b) After creating list if we try to add or remove element it will give UnsupportedOperationException
-        c) Adding null element will result in NullPointerException.
-		d) Total 12 overloaded method for of().
-		e) It returns Object of ImmutableCollections$ListN. Static inner class of ImmutableCollections.	
+	    - List<String> list= List.of("A","B","C");
+		- After creating list if we try to add or remove element it will give UnsupportedOperationException
+        - Adding null element will result in NullPointerException.
+		- Total 12 overloaded method for of().
+		- It returns Object of ImmutableCollections$ListN. Static inner class of ImmutableCollections.	
 	
     - Method to create Set
-     	a) Set<String> set= Set.of("A","B","C");
-		b) After creating Set if we try to add or remove element it will give UnsupportedOperationException.
-		c) Adding null element will result in NullPointerException.
-		d) Total 12 overloaded method.
-		e) Adding duplicate element to set will give IllegalArgumentException.
-		f) It returns Object of ImmutableCollections$SetN. Static inner class of ImmutableCollections;
+     	- Set<String> set= Set.of("A","B","C");
+		- After creating Set if we try to add or remove element it will give UnsupportedOperationException.
+		- Adding null element will result in NullPointerException.
+		- Total 12 overloaded method.
+		- Adding duplicate element to set will give IllegalArgumentException.
+		- It returns Object of ImmutableCollections$SetN. Static inner class of ImmutableCollections;
 		
 	- Method to create Map
-        a) Map<String,String> mapNew= Map.of("A","Apple","B","Ball","C","Cat");	
-		b) After creating Map if we try to add or remove element it will give UnsupportedOperationException.
-		c) Adding NULL KEY or VALUE will result in NullPointerException.
-		d) Total 11 overloaded method. For more than 10 elements we should use Map.ofEntry() methods.
-		e) It returns Object of ImmutableCollections.MapN. Static Inner class of ImmutableCollections.
+        - Map<String,String> mapNew= Map.of("A","Apple","B","Ball","C","Cat");	
+		- After creating Map if we try to add or remove element it will give UnsupportedOperationException.
+		- Adding NULL KEY or VALUE will result in NullPointerException.
+		- Total 11 overloaded method. For more than 10 elements we should use Map.ofEntry() methods.
+		- It returns Object of ImmutableCollections.MapN. Static Inner class of ImmutableCollections.
 		
 		
 6) Stream API enchancement	
 
     - takeWhile() 
         - default method added to Stream class.
-        - take parameter as Predicate 
+        - take parameter as Predicate. 
         - loops over the list and breaks where the conditions become false.
+		- 
+		   List<Integer> newList=list.stream()
+                                     .takeWhile(x-> x%2==0)
+                                     .collect(Collectors.toList());
+	        O/P ->  New modified list [2, 4]
+	- dropWhile()
+        - default method added to Stream class.	
+		- takes parameter as Predicate.
+		- Iterates over the collection and ignores value untill the condition is true. And there after returns all the value.
+		- List<Integer> list=List.of(2,4,3,5,6,8);
+		  List<Integer> newList1=list.stream()
+                                     .dropWhile(x-> x%2==0)
+                                     .collect(Collectors.toList());
+									 
+			O/P -> New modified list [3, 5, 6, 8]						 
+		
         		
 		
 			
