@@ -58,7 +58,7 @@ Demo project for Java9 features
 6) Stream API enchancement	
 
     - takeWhile() 
-        - default method added to Stream class.
+        - default method added to Stream interface.
         - take parameter as Predicate. 
         - loops over the list and breaks where the conditions become false.
 		- 
@@ -67,7 +67,7 @@ Demo project for Java9 features
                                      .collect(Collectors.toList());
 	        O/P ->  New modified list [2, 4]
 	- dropWhile()
-        - default method added to Stream class.	
+        - default method added to Stream interface.	
 		- takes parameter as Predicate.
 		- Iterates over the collection and ignores value untill the condition is true. And there after returns all the value.
 		- List<Integer> list=List.of(2,4,3,5,6,8);
@@ -75,9 +75,17 @@ Demo project for Java9 features
                                      .dropWhile(x-> x%2==0)
                                      .collect(Collectors.toList());
 									 
-			O/P -> New modified list [3, 5, 6, 8]						 
-		
-        		
+			O/P -> New modified list [3, 5, 6, 8]	
+    - Stream.iterate()		
+		- Stream.iterate() method got added in Java 1.8 only (But with 2 parameter , public static<T> Stream<T> iterate(final T seed, final UnaryOperator<T> f)
+		- In 1.9, overloaded static method got added which take three parameter.
+		- public static<T> Stream<T> iterate(T seed, Predicate<? super T> hasNext, UnaryOperator<T> next)
+        - Works same as for loop initialization , condition check and function to change the value.
+
+    - Steam.ofNullable
+        - Static method got addded as part of 1.9 enhancement.
+        - Returns a sequential Stream containing a single element, if non-null, otherwise returns an empty Stream.
+        - public static<T> Stream<T> ofNullable(T t)		
 		
 			
 			

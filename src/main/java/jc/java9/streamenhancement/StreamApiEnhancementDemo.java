@@ -2,6 +2,7 @@ package jc.java9.streamenhancement;
 
 import java.util.List;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class StreamApiEnhancementDemo {
 
@@ -20,6 +21,21 @@ public class StreamApiEnhancementDemo {
                 .dropWhile(x-> x%2==0)
                 .collect(Collectors.toList());
         System.out.println("New modified list "+newList1);
+
+        System.out.println("======================STREAM ITERATE METHOD DEMO===============================");
+
+        Stream.iterate(1,x->x<=10,x->x+2).forEach(System.out::println);
+
+        System.out.println("======================STREAM OF NULLABLE METHOD DEMO===============================");
+        // Returns empty Stream
+        Stream.ofNullable(null).forEach(System.out::println);
+        // Return actual stream
+        Stream.ofNullable(List.of(1,2,3,4,5)).forEach(System.out::println);
+
+
+
+
+
 
 
 
