@@ -61,21 +61,29 @@ Demo project for Java9 features
         - default method added to Stream interface.
         - take parameter as Predicate. 
         - loops over the list and breaks where the conditions become false.
-		- 
-		   List<Integer> newList=list.stream()
+		- Returns, if this stream is ordered, a stream consisting of the longest prefix of elements taken from this stream that match the given predicate. Otherwise returns, if this stream is unordered, a stream consisting of a subset of elements taken from this stream that match the given predicate.
+          If this stream is ordered then the longest prefix is a contiguous sequence of elements of this stream that match the given predicate. The first element of the sequence is the first element of this stream, and the element immediately following the last element of the sequence does not match the given predicate.
+          If this stream is unordered, and some (but not all) elements of this stream match the given predicate, then the behavior of this operation is nondeterministic; it is free to take any subset of matching elements (which includes the empty set).
+          Independent of whether this stream is ordered or unordered if all elements of this stream match the given predicate then this operation takes all elements (the result is the same as the input), or if no elements of the stream match the given predicate then no elements are taken (the result is an empty stream).
+        - List<Integer> newList=list.stream()
                                      .takeWhile(x-> x%2==0)
                                      .collect(Collectors.toList());
 	        O/P ->  New modified list [2, 4]
+			
 	- dropWhile()
         - default method added to Stream interface.	
 		- takes parameter as Predicate.
-		- Iterates over the collection and ignores value untill the condition is true. And there after returns all the value.
+		- Returns, if this stream is ordered, a stream consisting of the remaining elements of this stream after dropping the longest prefix of elements that match the given predicate. Otherwise returns, if this stream is unordered, a stream consisting of the remaining elements of this stream after dropping a subset of elements that match the given predicate.
+          If this stream is ordered then the longest prefix is a contiguous sequence of elements of this stream that match the given predicate. The first element of the sequence is the first element of this stream, and the element immediately following the last element of the sequence does not match the given predicate.
+          If this stream is unordered, and some (but not all) elements of this stream match the given predicate, then the behavior of this operation is nondeterministic; it is free to drop any subset of matching elements (which includes the empty set).
+          Independent of whether this stream is ordered or unordered if all elements of this stream match the given predicate then this operation drops all elements (the result is an empty stream), or if no elements of the stream match the given predicate then no elements are dropped (the result is the same as the input).
 		- List<Integer> list=List.of(2,4,3,5,6,8);
 		  List<Integer> newList1=list.stream()
                                      .dropWhile(x-> x%2==0)
                                      .collect(Collectors.toList());
 									 
 			O/P -> New modified list [3, 5, 6, 8]	
+			
     - Stream.iterate()		
 		- Stream.iterate() method got added in Java 1.8 only (But with 2 parameter , public static<T> Stream<T> iterate(final T seed, final UnaryOperator<T> f)
 		- In 1.9, overloaded static method got added which take three parameter.
@@ -83,6 +91,7 @@ Demo project for Java9 features
         - Works same as for loop initialization , condition check and function to change the value.
 
     - Steam.ofNullable
+	
         - Static method got addded as part of 1.9 enhancement.
         - Returns a sequential Stream containing a single element, if non-null, otherwise returns an empty Stream.
         - public static<T> Stream<T> ofNullable(T t)		
